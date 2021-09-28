@@ -103,7 +103,7 @@ class HomeController extends Controller
             'server' => config('constants.server', 'us5'),
         ]);
 
-        $response = $client->lists->getListMembersInfo(config('constants.listId', 'f18bc7f360'));
+        $response = $client->lists->getListMembersInfo(config('constants.listId', 'f18bc7f360'), $fields = null, $exclude_fields = null, $count = '1000');
 
         $fileName = 'contacts.csv';
 
