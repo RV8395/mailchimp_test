@@ -74,6 +74,10 @@
         .m-b-md {
             margin-bottom: 30px;
         }
+
+        .m-l-20{
+            margin-left: 20px;
+        }
     </style>
 </head>
 
@@ -105,7 +109,7 @@
                 <div class="row">
                     <form method="POST" action="{{route('import_contacts')}}" enctype="multipart/form-data">
                         @csrf
-                        <input type="file" name="file" accept="application/csv">
+                        <input type="file" name="file" accept="application/csv" class="m-l-20">
                         <input type="submit" class="btn btn-primary" value="Import" />
                     </form>
                 </div>
@@ -116,7 +120,7 @@
                 <div class="row">
                     <form method="POST" action="{{route('update_contacts')}}" enctype="multipart/form-data">
                         @csrf
-                        <input type="file" name="file" accept="application/csv">
+                        <input type="file" name="file" accept="application/csv" class="m-l-20">
                         <input type="submit" class="btn btn-primary" value="Sync Data" />
                     </form>
                 </div>
@@ -127,7 +131,7 @@
                 <div class="row">
                     <form method="POST" action="{{route('sync_tags')}}" enctype="multipart/form-data">
                         @csrf
-                        <input type="file" name="file" accept="application/csv">
+                        <input type="file" name="file" accept="application/csv" class="m-l-20">
                         <input type="submit" class="btn btn-primary" value="Sync Tags" />
                     </form>
                 </div>
@@ -136,7 +140,7 @@
             <div class="links">
                 <p>Export Contacts Data</p>
                 <div class="row">
-                    <a href="{{route('export_list')}}" class="btn btn-primary">Export</a>
+                    <a href="{{route('export_list')}}" class="btn btn-primary m-l-20">Export</a>
                 </div>
             </div>
         </div>
