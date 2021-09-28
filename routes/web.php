@@ -24,7 +24,7 @@ Route::get('/batches', function () {
         'server' => config('constants.server', 'us5'),
     ]);
 
-    $batches = $client->batches->list();
+    $batches = $client->batches->list($fields = null, $exclude_fields = null, $count = '1000');
     dd($batches);
 });
 

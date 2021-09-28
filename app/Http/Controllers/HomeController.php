@@ -193,7 +193,7 @@ class HomeController extends Controller
                     'phone' => $data[4],
                     'title' => $data[5],
                     'tags' => $data[6],
-                    'dob' => \Carbon\Carbon::parse($data[7])->format('m/d'),
+                    'dob' => $this->validateDate($data[7]) ? \Carbon\Carbon::parse($data[7])->format('m/d') : '',
                     'street_address' => $data[8],
                     'city' => $data[9],
                     'state' => $data[10],
@@ -322,6 +322,12 @@ class HomeController extends Controller
         ]);
 
         return $response;
+    }
+
+    private function validateDate($date, $format = 'Y-m-d')
+    {
+        $d = \DateTime::createFromFormat($format, $date);
+        return $d && $d->format($format) === $date;
     }
     // ----------------------------------------------------- PRIVATE functions
 
