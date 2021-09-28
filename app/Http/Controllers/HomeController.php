@@ -139,7 +139,6 @@ class HomeController extends Controller
     }
 
     // ----------------------------------------------------- PRIVATE functions
-
     private function prepareData($rowData)
     {
         $contacts = array();
@@ -221,6 +220,12 @@ class HomeController extends Controller
                         "ADDRESS" => $user['address'],
                         "PHONE" => $user['phone'],
                         "BIRTHDAY" => $user['dob'],
+                        "TITLE" => $user['title'],
+                        "CITY" => $user['city'],
+                        "STATE" => $user['state'],
+                        "ZIP" => $user['zip'],
+                        "COUNTRY" => $user['country'],
+                        "COUNTRYFUL" => $user['country_full'],
                         "CUSTOM1" => $user['custom_field_1'],
                         "CUSTOM2" => $user['custom_field_2'],
                     ]
@@ -317,11 +322,10 @@ class HomeController extends Controller
 
         return $response;
     }
-
     // ----------------------------------------------------- PRIVATE functions
 
 
-    
+
     // ----------------------------------------------------- R & D methods
     public function testApi()
     {
