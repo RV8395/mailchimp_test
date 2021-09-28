@@ -245,6 +245,7 @@ class HomeController extends Controller
                 $tags = array();
                 $existTags = $this->getTags($data[2]);
                 $arr = explode(',', $data[6]);
+                $arr = array_unique(array_map('trim', $arr));
 
                 if (!empty($arr)) {
                     foreach ($arr as $tag) {
